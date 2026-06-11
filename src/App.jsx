@@ -1,122 +1,96 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useState, useEffect, useRef } from "react";
+import './App.css';
+import './class.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+const cards = [
+  {
+    head: 'Uninfluenced',
+    subHead: 'Built for People, Not Algorithms',
+    data: 'Software should help you think, create, and focus—not compete for your attention. No dark patterns, engagement traps, or manipulation.'
+  },
+  {
+    head: 'Productive and Fast',
+    subHead: 'Less Waiting. More Creating.',
+    data: 'Fast software respects your time. Every second saved is a second spent learning, building, or exploring new possibilities.'
+  },
+  {
+    head: 'Offline First',
+    subHead: 'Your Work Belongs to You',
+    data: 'An internet connection should be a feature, not a requirement. Your tools should remain available wherever your ideas appear.'
+  },
+  {
+    head: 'Highly Secure',
+    subHead: 'Privacy by Design',
+    data: "Security isn't an afterthought. From local-first workflows to minimal data collection, your information stays under control."
+  }
+]
+
+export default function App() {
+  const [showWelcome, setShowWelcome] = useState(true);
+  const [closeWelcome, setCloseWelcome] = useState(false);
+  const [showNav, setShowNav] = useState(false);
+  const heroRef = useRef(null);
+
+  function closingWelcome() {
+    document.documentElement.requestFullscreen();
+    setTimeout(() => {setCloseWelcome(true)}, 1000)
+    setTimeout(() => {setShowWelcome(false)}, 2000)
+  }
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowNav(entry.intersectionRatio < 0.5);
+      },
+      {
+        threshold: [0, 0.5, 1],
+      }
+    );
+
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
+    {showWelcome &&
+    <div className="welcome" style={{top: closeWelcome? '-105dvh':'0'}} onClick={() => {closingWelcome()}}>
+      <h1>hello</h1>
+    </div>
+    }
+
+    <div className="navbar" style={{top: showNav? '5dvh':'-100%'}}>
+      <img src="src/assets/logo_folder.png" alt="Logo" className="navLogo" />
+      <button className="navBtn"></button>
+      <button className="navBtn"></button>
+      <button className="navBtn"></button>
+      <button className="navBtn"></button>
+      <button className="navBtn"></button>
+    </div>
+
+    <section className="hero" ref={heroRef}>
+      <img src="src/assets/proto3.png" alt="Hero Image" />
+    </section>
+
+    <div className="overview">
+      <h1 className="brand pop">Deep Projects</h1>
+      <h2>Focusing on what matters...</h2>
+      
+      <section className="cards">
+        {cards.map((card, index) => {
+          return (
+            <div className="card" key={index}>
+              <h2 className="cardHead pop">{card.head}</h2>
+              <h3 className="cardSubHead">{card.subHead}</h3>
+              <p className="cardData">{card.data}</p>
+            </div>
+          )
+        })}
       </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+    </div>
     </>
   )
 }
-
-export default App
