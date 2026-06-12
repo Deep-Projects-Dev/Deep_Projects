@@ -1,6 +1,10 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from 'react';
 import './App.css';
 import './class.css';
+
+// images import
+import proto from './assets/proto3.png';
+import folderLogo from './assets/logo_folder.png';
 
 const cards = [
   {
@@ -9,7 +13,7 @@ const cards = [
     data: 'Software should help you think, create, and focus—not compete for your attention. No dark patterns, engagement traps, or manipulation.'
   },
   {
-    head: 'Productive and Fast',
+    head: 'Productive & Fast',
     subHead: 'Less Waiting. More Creating.',
     data: 'Fast software respects your time. Every second saved is a second spent learning, building, or exploring new possibilities.'
   },
@@ -63,7 +67,7 @@ export default function App() {
     }
 
     <div className="navbar" style={{top: showNav? '5dvh':'-100%'}}>
-      <img src="src/assets/logo_folder.png" alt="Logo" className="navLogo" />
+      <img src={folderLogo} alt="Logo" className="navLogo" href="deepprojects.dev" />
       <button className="navBtn"></button>
       <button className="navBtn"></button>
       <button className="navBtn"></button>
@@ -72,10 +76,13 @@ export default function App() {
     </div>
 
     <section className="hero" ref={heroRef}>
-      <img src="src/assets/proto3.png" alt="Hero Image" />
+      <img src={proto} alt="Hero Image" />
     </section>
 
     <div className="overview">
+      <h2 className='creator pop'>Arshdeep Singh</h2>
+      <h3>presents...</h3>
+
       <h1 className="brand pop">Deep Projects</h1>
       <h2>Focusing on what matters...</h2>
       

@@ -4,12 +4,11 @@
   margin: 0;
   padding: 0;
   
-  /* background: url('./assets/logo1_land.png') no-repeat; */
-  background: black;
+  background: linear-gradient(#baf, #000);
   color: white;
   text-align: center;
   font-family: 'Brush Script MT';
-  font-size: 20dvh;
+  font-size: 20cqw;
   transition: 500ms;
   overflow: hidden;
   scrollbar-width: none;
@@ -26,7 +25,7 @@
   & > h1 {
     padding: 10dvw;
 
-    background: linear-gradient(45deg, #acf, #caf);
+    background: linear-gradient(45deg, #79c, #97c);
     background-clip: text;
     color: transparent;
     -webkit-background-clip: text;
@@ -82,10 +81,10 @@
   padding: 0;
   border: none;
 
-  box-shadow: 0 0 50rem #baf;
+  box-shadow: 0 7rem 100rem #baf;
   
   & > img {
-    height: 100dvh;
+    height: auto;
     width: 100dvw;
   }
 }
@@ -98,37 +97,74 @@
   background: linear-gradient(transparent, #000, #1e1e1e);
   text-align: center;
 
-  & > h1 {font-size: 15dvh; margin-top: 50dvh;}
-  & > h2 {font-size: 5dvh;}
+  & > h1 {
+    font-size: 20dvw;
+    margin-top: 2em;
+    line-height: 1.2em;
+
+    background: linear-gradient(0deg, #fff, #86b 40%, #000 95%);
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  & > h2 {font-size: 7dvw;}
+  & > .creator {
+    line-height: 1.2em;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(255, 255, 255, 0.15) 30%);
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 .cards {
   height: max-content;
   width: 100dvw;
   margin: auto;
+  
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.card {
-  height: 40dvh;
-  width: 20dvw;
+} .card {
+  padding: 0.25rem;
+  margin: 0.25rem;
 
   background: #1e1e1e;
   border-radius: 2.5rem;
   box-shadow:
   -0.25rem -0.25rem 0.5rem rgba(255, 255, 255, 0.15),
   0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 1);
+  font-size: 2em;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-}
 
-.cardData {
+  & > h2 {
+    width: 100%;
+    line-height: 2em;
+    border-bottom: 2px solid #e1e1e1;
+  }
+} .cardData {
   text-wrap-mode: wrap;
   text-wrap-style: balance;
+}
+
+@media (max-width: calc(200ch + 13rem)) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .overview {background: linear-gradient(transparent, #000, #1e1e1e 70%);}
+} @media (max-width: calc(80ch + 5rem)) {
+  .cards {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+  .overview {background: linear-gradient(transparent, #000, #1e1e1e 50%);}
 }
