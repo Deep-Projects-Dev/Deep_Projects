@@ -110,6 +110,7 @@
   }
   & > h2 {font-size: 7dvw;}
   & > .creator {
+    font-size: 10dvw;
     line-height: 1.2em;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(255, 255, 255, 0.15) 30%);
     background-clip: text;
