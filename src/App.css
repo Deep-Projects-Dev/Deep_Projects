@@ -109,10 +109,11 @@
     -webkit-text-fill-color: transparent;
   }
   & > h2 {font-size: 7dvw;}
+  & > h3 {font-size: 3dvw;}
   & > .creator {
     font-size: 10dvw;
     line-height: 1.2em;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(255, 255, 255, 0.15) 30%);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(187, 170, 255, 0.5) 30%);
     background-clip: text;
     color: transparent;
     -webkit-background-clip: text;
