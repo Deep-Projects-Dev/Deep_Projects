@@ -1,3 +1,24 @@
-.pop {
-  font-family: 'Poppins'
+
+/* float */
+.left {float: left;}
+.right {float: right;}
+
+/* font */
+.pop {font-family: 'Poppins'}
+.pw {font-family: 'Playwrite';}
+
+/* space */
+.spaceup {
+  margin-top: 20rem;
+}
+
+/* Pop with Clip */
+.pwc {
+  background: linear-gradient(0deg, #000, #75a 40%);
+  font-family: 'Poppins';
+  font-weight: 600;
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

@@ -1,18 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap');
+/* Nunito */
 @font-face {
-  font-family: 'Poppins';
-  src: url('./assets/Fonts/poppins-regular-webfont.woff2') format('truetype');
-  font-weight: 400;
+  font-family: 'Nunito';
+  src: url('./assets/Fonts/Nunito-VariableFont_wght.ttf') format('TrueType');
+  font-weight: 200 300 400 500 600 700 800;
   font-style: normal;
   font-display: swap;
 }
+
+/* Playwrite */
+@font-face {
+  font-family: 'Playwrite';
+  src: url('./assets/Fonts/PlaywriteGBJ-VariableFont_wght.ttf') format('TrueType');
+  font-weight: 200 300 400 500 600 700 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Poppins */
 @font-face {
   font-family: 'Poppins';
-  src: url('./assets/Fonts/poppins-semibold-webfont.woff2') format('truetype');
+  src: url('./assets/Fonts/poppins-regular-webfont.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+} @font-face {
+  font-family: 'Poppins';
+  src: url('./assets/Fonts/poppins-semibold-webfont.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
+
+/* Web */
 
 html, body, #root {
   height: 100dvh;
@@ -31,4 +50,16 @@ html, body, #root {
   scroll-snap-type: proximity;
 
   font-family: 'Nunito', 'Poppins', 'Century Gothic', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html, body, #root, div, sect, h1, h2, h3, h4, h5, h6, p, pre, button, a, img {
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  text-wrap-mode: wrap;
+  text-wrap-style: balance;
 }

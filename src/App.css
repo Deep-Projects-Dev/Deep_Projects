@@ -7,8 +7,8 @@
   background: linear-gradient(#baf, #000);
   color: white;
   text-align: center;
-  font-family: 'Brush Script MT';
-  font-size: 20cqw;
+  font-family: 'Playwrite';
+  font-size: 15cqw;
   transition: 500ms;
   overflow: hidden;
   scrollbar-width: none;
@@ -16,11 +16,13 @@
   -moz-user-select: none;
   
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
   position: absolute;
   inset: 0;
+  z-index: 6;
 
   & > h1 {
     padding: 10dvw;
@@ -30,13 +32,29 @@
     color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    line-height: 1em;
+  }
+  & > p {
+    height: 1em;
+    width: max-content;
+
+    font-size: 5cqw;
+    line-height: 1em;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 1.5rem;
+    
+    position: absolute;
+    bottom: 5cqh;
   }
 }
 
 .navbar {
   height: 10dvh;
   width: 80dvw;
-  margin: auto;
+  margin: 0;
   padding: 0;
 
   background-color: rgba(0, 0, 0, 0.7);
@@ -44,7 +62,8 @@
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 1.5rem;
-  overflow: hidden;
+  overflow: auto;
+  scrollbar-width: none;
   transition: 1000ms;
 
   display: grid;
@@ -54,10 +73,16 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 5;
+  top: 0;
 
   & > .navLogo {
     height: 10dvh;
     width: auto;
+
+    background: #000 url('./assets/logo_folder.png') no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
   }
 
   & > .navBtn {
@@ -66,9 +91,7 @@
     margin: auto;
     padding: 0;
 
-    background-color: rgba(0, 0, 0, 0.05);
-    backdrop-filter: blur(14px) saturate(140%);
-    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 1.5rem;
   }
@@ -85,21 +108,23 @@
   
   & > img {
     height: auto;
+    min-height: 50dvh;
     width: 100dvw;
+    object-fit: contain;
   }
 }
 
 .overview {
   height: auto;
   width: 100dvw;
-  padding: 5dvh 0;
+  padding: 0;
 
-  background: linear-gradient(transparent, #000, #1e1e1e);
+  background: linear-gradient(transparent, #000);
   text-align: center;
 
   & > h1 {
     font-size: 20dvw;
-    margin-top: 2em;
+    margin-top: 40dvh;
     line-height: 1.2em;
 
     background: linear-gradient(0deg, #fff, #86b 40%, #000 95%);
@@ -109,7 +134,28 @@
     -webkit-text-fill-color: transparent;
   }
   & > h2 {font-size: 7dvw;}
-  & > h3 {font-size: 3dvw;}
+  & > h3 {
+    font-size: 3dvw;
+    
+    & > b {
+      font-family: 'Playwrite';
+      background: linear-gradient(0deg, #000, #86b 40%);
+      background-clip: text;
+      color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    & > .TS {
+      background: linear-gradient(0deg, #000, #75a 40%);
+      font-family: 'Poppins';
+      font-weight: 600;
+      background-clip: text;
+      color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
   & > .creator {
     font-size: 10dvw;
     line-height: 1.2em;
@@ -121,7 +167,8 @@
   }
 }
 
-.cards {
+/* Philosophy */
+/* .cards {
   height: max-content;
   width: 100dvw;
   margin: auto;
@@ -157,16 +204,106 @@
   text-wrap-style: balance;
 }
 
-@media (max-width: calc(200ch + 13rem)) {
+@media (max-width: calc(220ch + 13rem)) {
   .cards {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
   }
-  .overview {background: linear-gradient(transparent, #000, #1e1e1e 70%);}
-} @media (max-width: calc(80ch + 5rem)) {
+} @media (max-width: calc(100ch + 5rem)) {
   .cards {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
   }
-  .overview {background: linear-gradient(transparent, #000, #1e1e1e 50%);}
+  .navbar {
+    width: 100dvw;
+    position: fixed;
+    top: 0;
+  }
+} */
+
+/* Meet Our Team */
+
+.tCards {
+  height: max-content;
+  width: 100dvw;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: center;
+
+  gap: 1rem;
+}
+
+.tCard {
+  height: minmax(5rem, max-content);
+  width: minmax(max-content, calc((100dvw - 10rem) / 4));
+  padding: 1rem;
+
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 2.5rem;
+  transition: 100ms;
+  position: relative;
+
+  & > img {
+    height: 30dvh;
+    width: 30dvh;
+    object-fit: contain;
+    
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 2.5rem;
+  }
+} .tCard::before {
+  content: attr('emoji');
+  height: 1rem;
+  width: 2rem;
+  padding: 0.5rem;
+  
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  visibility: visible;
+} .tCard:hover ::before {
+  visibility: visible;
+}
+
+.tCard:hover {
+  transform: scale(1.07);
+
+  &+ .tCard {transform: scale(1.01);}
+}.tCard:has(+ .tCard:hover) {
+  transform: scale(1.01);
+}
+
+
+
+@media (max-width: calc(1400px - 4rem)) {
+  .tCards {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
+  }
+  .tCard {
+    width: 50dvh;
+    & > img {width: 40dvh;}
+  }
+  .navbar {
+    width: 100dvw;
+    top: 0;
+    border-radius: 0;
+  }
+} @media (max-width: calc(1100px - 2rem)) {
+  .tCards {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+  .tCard {
+    width: 80dvw;
+    & > img {width: 80cqw;}
+  }
 }

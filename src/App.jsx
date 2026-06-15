@@ -4,7 +4,11 @@ import './class.css';
 
 // images import
 import proto from './assets/proto3.png';
-import folderLogo from './assets/logo_folder.png';
+// import folderLogo from './assets/logo_folder.png';
+import wisp from './assets/wisp.png';
+import curio from './assets/curio.png';
+import intel from './assets/intel.png';
+import arsh from './assets/Arsh3.jpeg';
 
 const cards = [
   {
@@ -62,12 +66,14 @@ export default function App() {
     <>
     {showWelcome &&
     <div className="welcome" style={{top: closeWelcome? '-105dvh':'0'}} onClick={() => {closingWelcome()}}>
-      <h1>hello</h1>
+      <h1>Hello</h1>
+      <p>Click anywhere.</p>
     </div>
     }
 
     <div className="navbar" style={{top: showNav? '5dvh':'-100%'}}>
-      <img src={folderLogo} alt="Logo" className="navLogo" href="deepprojects.dev" />
+      {/* <img src={folderLogo} alt="Logo" className="navLogo" href="deepprojects.dev" /> */}
+      <div className="navLogo"></div>
       <button className="navBtn"></button>
       <button className="navBtn"></button>
       <button className="navBtn"></button>
@@ -84,8 +90,38 @@ export default function App() {
       <h3>presents...</h3>
 
       <h1 className="brand pop">Deep Projects</h1>
-      <h2>Focusing on what matters...</h2>
-      
+      <h2>Wonder. Explore. Create.</h2>
+      <h3>A <b className='TS'>Technology Studio</b> driven by <b>Curiosity</b>, <b>Experimentation</b>, and <b>Shear Stubbornness</b>.</h3>
+
+      <h2 className='spaceup'>Meet Our Team</h2>
+      <section className="tCards">
+        <div className="tCard" emoji="😎">
+          <img src={arsh} alt="arsh" />
+          <h1 className="tName pw">Arshdeep</h1>
+          <h2>Hooman</h2>
+          <h3><b className="pwc">Founder</b>, Dev & PM</h3>
+        </div>
+        <div className="tCard" emoji="😉">
+          <img src={wisp} alt="wisp" />
+          <h1 className="tName pw">Wisp</h1>
+          <h2>Ghosty</h2>
+          <h3>Tinkerer</h3>
+        </div>
+        <div className="tCard" emoji="😮">
+          <img src={curio} alt="curio" />
+          <h1 className="tName pw">Curio</h1>
+          <h2>Fenrir Cub</h2>
+          <h3>Explorer</h3>
+        </div>
+        <div className="tCard" emoji="🧐">
+          <img src={intel} alt="intel" />
+          <h1 className="tName pw">Intel</h1>
+          <h2>Phoenix Chick</h2>
+          <h3>Scholar</h3>
+        </div>
+      </section>
+
+      {/* <h2>Focusing on what matters...</h2>
       <section className="cards">
         {cards.map((card, index) => {
           return (
@@ -96,7 +132,7 @@ export default function App() {
             </div>
           )
         })}
-      </section>
+      </section> */}
     </div>
     </>
   )
