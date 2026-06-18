@@ -31,6 +31,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/Fonts/RobotoMono-VariableFont_wght.ttf') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Web */
 
 html, body, #root {

@@ -91,7 +91,7 @@ export default function App() {
 
       <h1 className="brand pop">Deep Projects</h1>
       <h2>Wonder. Explore. Create.</h2>
-      <h3>A <b className='TS'>Technology Studio</b> driven by <b>Curiosity</b>, <b>Experimentation</b>, and <b>Shear Stubbornness</b>.</h3>
+      <h3>A <b className='TS'>Technology Studio</b> driven by <b>Curiosity</b>,<br /><b>Experimentation</b>, and <b>Sheer Stubbornness</b>.</h3>
 
       <h2 className='spaceup'>Meet Our Team</h2>
       <section className="tCards">

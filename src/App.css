@@ -8,7 +8,7 @@
   color: white;
   text-align: center;
   font-family: 'Playwrite';
-  font-size: 15cqw;
+  font-size: 10cqw;
   transition: 500ms;
   overflow: hidden;
   scrollbar-width: none;
@@ -123,7 +123,7 @@
   text-align: center;
 
   & > h1 {
-    font-size: 20dvw;
+    font-size: 15dvw;
     margin-top: 40dvh;
     line-height: 1.2em;
 
@@ -133,9 +133,9 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  & > h2 {font-size: 7dvw;}
+  & > h2 {font-size: 5dvw;}
   & > h3 {
-    font-size: 3dvw;
+    font-size: 2dvw;
     
     & > b {
       font-family: 'Playwrite';
@@ -147,8 +147,9 @@
     }
     
     & > .TS {
-      background: linear-gradient(0deg, #000, #75a 40%);
-      font-family: 'Poppins';
+      font-size: 1.1em;
+      background: radial-gradient(white, black 90%);
+      font-family: 'Roboto';
       font-weight: 600;
       background-clip: text;
       color: transparent;
