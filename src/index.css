@@ -31,6 +31,7 @@
   font-display: swap;
 }
 
+/* Roboto */
 @font-face {
   font-family: 'Roboto';
   src: url('./assets/Fonts/RobotoMono-VariableFont_wght.ttf') format('woff2');
@@ -40,16 +41,13 @@
 }
 
 /* Web */
-
 html, body, #root {
   height: 100dvh;
   width: 100dvw;
   margin: 0;
   padding: 0;
   border: none;
-}
-
-#root {
+} #root {
   background: black;
   color: white;
   overflow: hidden auto;
@@ -65,9 +63,15 @@ html, body, #root, div, sect, h1, h2, h3, h4, h5, h6, p, pre, button, a, img {
   -ms-user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
+  
+  line-height: 1.2em;
 }
 
 h1, h2, h3, h4, h5, h6, p {
   text-wrap-mode: wrap;
   text-wrap-style: balance;
+}
+
+button {
+  cursor: pointer;
 }

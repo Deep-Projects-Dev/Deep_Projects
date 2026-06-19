@@ -67,34 +67,48 @@
   transition: 1000ms;
 
   display: grid;
-  grid-template-columns: 1fr 10% 10% 10% 10% 10%;
+  grid-template-columns: 1fr 11dvw 11dvw 11dvw  22.8dvw;
   grid-template-rows: 1fr;
+  gap: 1rem;
   
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   z-index: 5;
-  top: 0;
+  top: 5dvh;
 
   & > .navLogo {
     height: 10dvh;
-    width: auto;
+    width: minmax(auto, 20dvh);
 
-    background: #000 url('./assets/logo_folder.png') no-repeat;
+    background: transparent url('./assets/logo_folder.png') no-repeat;
     background-size: contain;
     background-position: 50% 50%;
   }
 
-  & > .navBtn {
-    height: 7dvh;
-    width: 7dvw;
-    margin: auto;
-    padding: 0;
+} .navBtn {
+  height: 7dvh;
+  width: 10dvw;
+  margin: auto;
+  padding: 0;
 
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 1.5rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1.5rem;
+  font-size: 1.5cqw;
+  font-family: 'Playwrite';
+  
+  &:hover {
+    border: 1px solid white;
   }
+} #navBtnC {
+  width: max-content;
+
+  background-color: transparent;
+  
+  display: flex;
+  gap: 1rem;
 }
 
 .hero {
@@ -118,12 +132,13 @@
   height: auto;
   width: 100dvw;
   padding: 0;
+  padding-bottom: 20dvh;
 
   background: linear-gradient(transparent, #000);
   text-align: center;
 
   & > h1 {
-    font-size: 15dvw;
+    font-size: 20dvw;
     margin-top: 40dvh;
     line-height: 1.2em;
 
@@ -133,9 +148,9 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  & > h2 {font-size: 5dvw;}
+  & > h2 {font-size: 7dvw; height: 1.2em;}
   & > h3 {
-    font-size: 2dvw;
+    font-size: 3dvw;
     
     & > b {
       font-family: 'Playwrite';
@@ -146,7 +161,7 @@
       -webkit-text-fill-color: transparent;
     }
     
-    & > .TS {
+    /* & > .TS {
       font-size: 1.1em;
       background: radial-gradient(white, black 90%);
       font-family: 'Roboto';
@@ -155,7 +170,7 @@
       color: transparent;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-    }
+    } */
   }
   & > .creator {
     font-size: 10dvw;
@@ -168,62 +183,7 @@
   }
 }
 
-/* Philosophy */
-/* .cards {
-  height: max-content;
-  width: 100dvw;
-  margin: auto;
-  
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-
-} .card {
-  padding: 0.25rem;
-  margin: 0.25rem;
-
-  background: #1e1e1e;
-  border-radius: 2.5rem;
-  box-shadow:
-  -0.25rem -0.25rem 0.5rem rgba(255, 255, 255, 0.15),
-  0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 1);
-  font-size: 2em;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-
-  & > h2 {
-    width: 100%;
-    line-height: 2em;
-    border-bottom: 2px solid #e1e1e1;
-  }
-} .cardData {
-  text-wrap-mode: wrap;
-  text-wrap-style: balance;
-}
-
-@media (max-width: calc(220ch + 13rem)) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
-} @media (max-width: calc(100ch + 5rem)) {
-  .cards {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-  }
-  .navbar {
-    width: 100dvw;
-    position: fixed;
-    top: 0;
-  }
-} */
-
-/* Meet Our Team */
-
+/* Cards */
 .tCards {
   height: max-content;
   width: 100dvw;
@@ -237,11 +197,10 @@
 
   gap: 1rem;
 }
-
 .tCard {
-  height: minmax(5rem, max-content);
-  width: minmax(max-content, calc((100dvw - 10rem) / 4));
-  padding: 1rem;
+  height: 100%;
+  width: calc((100dvw - 30rem) / 4);
+  padding: 2rem;
 
   background-color: rgba(0, 0, 0, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -257,6 +216,11 @@
     border: 2px solid rgba(255, 255, 255, 0.15);
     border-radius: 2.5rem;
   }
+
+  & > .cardHead {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
 } .tCard::before {
   content: attr('emoji');
   height: 1rem;
@@ -271,7 +235,6 @@
 } .tCard:hover ::before {
   visibility: visible;
 }
-
 .tCard:hover {
   transform: scale(1.07);
 
@@ -280,9 +243,50 @@
   transform: scale(1.01);
 }
 
+.modal {
+  height: 80dvh;
+  width: 85dvw;
+  margin-top: 8dvh;
+  
+  background-color: rgba(0, 0, 0, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 2.5rem;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  & > h2 {
+    font-size: 4dvw;
+    line-height: 1.2em;
+    text-align: center;
+
+    & > .clsModal {
+      height: 4dvw;
+      width: 4dvw;
+
+      color: white;
+      background-color: rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 2dvw;
+
+      font-size: 2dvw;
+      float: right;
+
+      &:hover {border: 1px solid white;}
+    }
+  }
+}
 
 
-@media (max-width: calc(1400px - 4rem)) {
+
+/* Media Query */
+@media (min-width: calc(1920px + 5rem)) {
+  .tCard {
+    font-size: 1.8rem;
+  }
+} @media (max-width: calc(200dvh - (13rem * 3 * 1.6))) {
   .tCards {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -297,7 +301,7 @@
     top: 0;
     border-radius: 0;
   }
-} @media (max-width: calc(1100px - 2rem)) {
+} @media (max-width: calc(200dvh - (13rem * 3))) {
   .tCards {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
