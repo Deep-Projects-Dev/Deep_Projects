@@ -131,6 +131,45 @@ export default function App() {
       <h2 className="three" ref={threeRef}>{three}</h2>
       <h3>A <b>Technology Studio</b> driven by Curiosity,<br />Experimentation, and Sheer Stubbornness.</h3>
 
+      <section className="birthdaySection">
+        <div className="birthdayCard">
+          <span className="birthdayTag">24 July</span>
+      
+          <h1>
+            Another Year.
+            <br />
+            Another Beginning.
+          </h1>
+      
+          <p>
+            Today isn't just my birthday.
+            It's another reminder to stay curious, keep building,
+            and create technology that genuinely helps people.
+          </p>
+      
+          <div className="birthdayStats">
+            <div>
+              <h2>17</h2>
+              <span>Years</span>
+            </div>
+      
+            <div>
+              <h2>∞</h2>
+              <span>Ideas</span>
+            </div>
+      
+            <div>
+              <h2>1</h2>
+              <span>Mission</span>
+            </div>
+          </div>
+      
+          <blockquote>
+            "Wonder. Explore. Create."
+          </blockquote>
+        </div>
+      </section>
+
       <h2 className='spaceup'>Meet Our Team</h2>
       <section className="tCards">
         <div className="tCard" emoji="😎">
