@@ -1,15 +1,14 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
 
-// import { SpeedInsights } from '@vercel/speed-insights'
-// import { Analytics } from '@vercel/analytics'
+import './index.css'
+import './fonts.css'
+import './palette.css'
+
+import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-    {/* <SpeedInsights />
-    <Analytics /> */}
   </StrictMode>,
 )

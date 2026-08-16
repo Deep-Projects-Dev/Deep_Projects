@@ -1,24 +1,19 @@
+.glow {
+  position: relative;
 
-/* float */
-.left {float: left;}
-.right {float: right;}
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -30%;
+    z-index: -1;
 
-/* font */
-.pop {font-family: 'Poppins'}
-.pw {font-family: 'Playwrite';}
+    background: radial-gradient(
+      circle,
+      var(--primary) 0%,
+      transparent 60%
+    );
 
-/* space */
-.spaceup {
-  margin-top: 20rem;
-}
-
-/* Pop with Clip */
-.pwc {
-  background: linear-gradient(0deg, #000, #75a 40%);
-  font-family: 'Poppins';
-  font-weight: 600;
-  background-clip: text;
-  color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    opacity: 0.12;
+    filter: blur(4rem);
+  }
 }
