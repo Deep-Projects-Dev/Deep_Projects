@@ -1,0 +1,542 @@
+.license-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      color-mix(in srgb, var(--primary) 10%, transparent),
+      transparent 35rem
+    ),
+    var(--background);
+  color: var(--light-secondary);
+  padding-bottom: 8rem;
+
+  & > .license-hero {
+    width: min(1100px, 90%);
+    margin: auto;
+    padding: 9rem 0 5rem;
+    text-align: center;
+
+    & > .license-badge {
+      display: inline-block;
+      padding: .5rem .9rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--accent);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+
+    & > h1 {
+      margin: 0;
+      color: var(--primary);
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      line-height: .95;
+      letter-spacing: -.05em;
+    }
+
+    & > p {
+      width: min(650px, 100%);
+      margin: 2rem auto 0;
+      color: var(--secondary);
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+
+    & > .license-meta {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: .7rem;
+      margin-top: 2rem;
+
+      & > span {
+        padding: .55rem .8rem;
+        border: 1px solid var(--border);
+        border-radius: .6rem;
+        background: var(--surface);
+        color: var(--secondary);
+        font-size: .8rem;
+      }
+    }
+  }
+
+  & > .license-summary {
+    width: min(1100px, 90%);
+    margin: 0 auto 5rem;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+
+    & > .summary-card {
+      display: flex;
+      gap: .9rem;
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      background: var(--surface);
+      box-shadow: inset 0 1px 0 #ffffff08;
+
+      & > span {
+        font-size: 1.4rem;
+        font-weight: 700;
+      }
+
+      & > div {
+        & > strong {
+          display: block;
+          color: var(--light-primary);
+          font-size: .95rem;
+        }
+
+        & > p {
+          margin: .35rem 0 0;
+          color: var(--secondary);
+          font-size: .8rem;
+          line-height: 1.5;
+        }
+      }
+
+      &.positive > span {
+        color: var(--success);
+      }
+
+      &.negative > span {
+        color: var(--error);
+      }
+    }
+  }
+
+  & > .license-layout {
+    width: min(1250px, 92%);
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 220px minmax(0, 800px);
+    justify-content: center;
+    gap: 5rem;
+    align-items: start;
+
+    & > .license-nav {
+      position: sticky;
+      top: 2rem;
+
+      & > .license-nav-inner {
+        display: flex;
+        flex-direction: column;
+        gap: .25rem;
+
+        & > .nav-label {
+          margin-bottom: .7rem;
+          color: var(--secondary);
+          font-size: .7rem;
+          font-weight: 800;
+          letter-spacing: .12em;
+        }
+
+        & > button {
+          padding: .65rem .8rem;
+          border: 0;
+          border-left: 2px solid transparent;
+          background: transparent;
+          color: var(--secondary);
+          text-align: left;
+          cursor: pointer;
+          font: inherit;
+          font-size: .82rem;
+          transition: .2s;
+
+          &:hover {
+            color: var(--light-primary);
+          }
+
+          &.active {
+            border-left-color: var(--accent);
+            background: linear-gradient(
+              90deg,
+              #5dd6ff12,
+              transparent
+            );
+            color: var(--primary);
+          }
+        }
+
+        & > .raw-link {
+          margin-top: 1rem;
+          padding: .7rem .8rem;
+          border: 1px solid var(--border);
+          border-radius: .6rem;
+          color: var(--accent);
+          font-size: .8rem;
+          text-decoration: none;
+          transition: .2s;
+
+          &:hover {
+            border-color: var(--accent);
+            background: #5dd6ff0a;
+          }
+        }
+      }
+    }
+
+    & > .license-document {
+      min-width: 0;
+
+      & > .license-intro {
+        padding-bottom: 3rem;
+        margin-bottom: 3rem;
+        border-bottom: 1px solid var(--divider);
+
+        & > .eyebrow {
+          margin: 0 0 .7rem;
+          color: var(--accent);
+          font-size: .7rem;
+          font-weight: 800;
+          letter-spacing: .15em;
+        }
+
+        & > h2 {
+          margin: 0;
+          color: var(--light-primary);
+          font-size: clamp(2rem, 4vw, 3rem);
+          line-height: 1.1;
+        }
+
+        & > p:last-child {
+          margin: 1rem 0 0;
+          color: var(--secondary);
+        }
+      }
+
+      & > .license-section {
+        scroll-margin-top: 2rem;
+        padding: 2rem 0;
+        border-bottom: 1px solid var(--divider);
+
+        & > h2 {
+          margin: 0 0 1.5rem;
+          color: var(--light-primary);
+          font-size: 1.65rem;
+        }
+
+        & > p {
+          margin: 0 0 1.1rem;
+          color: var(--secondary);
+          font-size: .96rem;
+          line-height: 1.85;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          & > strong {
+            color: var(--primary);
+          }
+        }
+
+        &.emphasis {
+          padding: 3rem 0;
+        }
+
+        &.final-section {
+          border-bottom: 0;
+        }
+
+        & > .rights-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: .8rem;
+          margin-top: 2rem;
+
+          & > .right-card {
+            display: flex;
+            align-items: center;
+            gap: .8rem;
+            padding: .9rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: .7rem;
+            background: var(--surface);
+
+            & > span {
+              font-size: 1.1rem;
+              font-weight: 800;
+            }
+
+            & > div {
+              & > strong {
+                display: block;
+                color: var(--light-primary);
+                font-size: .85rem;
+              }
+
+              & > small {
+                display: block;
+                margin-top: .15rem;
+                color: var(--secondary);
+                font-size: .7rem;
+              }
+            }
+
+            &.allowed > span {
+              color: var(--success);
+            }
+
+            &.restricted > span {
+              color: var(--error);
+            }
+          }
+        }
+
+        & > .warning-box {
+          display: flex;
+          gap: 1rem;
+          margin-bottom: 1.5rem;
+          padding: 1rem 1.2rem;
+          border: 1px solid #fbbf2430;
+          border-radius: .8rem;
+          background: #fbbf2408;
+
+          & > span {
+            width: 1.5rem;
+            height: 1.5rem;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: var(--warning);
+            color: var(--background);
+            font-weight: 900;
+          }
+
+          & > p {
+            margin: 0;
+            color: var(--light-secondary);
+            line-height: 1.6;
+          }
+        }
+
+        & > .quote-box {
+          padding: 1.4rem 1.5rem;
+          border-left: 3px solid var(--secondary);
+          background: var(--surface);
+
+          & > p {
+            margin: 0;
+          }
+        }
+
+        & > .not-open-source {
+          display: grid;
+          grid-template-columns: 80px 1fr;
+          gap: 1.5rem;
+          padding: 2rem;
+          border: 1px solid var(--accent);
+          border-radius: 1rem;
+          background:
+            radial-gradient(
+              circle at top right,
+              #5dd6ff10,
+              transparent 20rem
+            ),
+            var(--surface);
+          box-shadow:
+            0 0 60px #5dd6ff08,
+            inset 0 1px 0 #ffffff08;
+
+          & > span {
+            display: grid;
+            place-items: center;
+            width: 70px;
+            height: 70px;
+            border-radius: 1rem;
+            background: #5dd6ff10;
+            color: var(--accent);
+            font-size: 2rem;
+            font-weight: 900;
+          }
+
+          & > div {
+            & > .eyebrow {
+              margin: 0 0 .4rem;
+              color: var(--accent);
+              font-size: .7rem;
+              font-weight: 800;
+              letter-spacing: .12em;
+            }
+
+            & > h2 {
+              margin: 0 0 1rem;
+              color: var(--light-primary);
+            }
+
+            & > p:last-child {
+              margin: 0;
+            }
+          }
+        }
+
+        & > .acceptance-card {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 1rem;
+          margin-top: 2rem;
+          padding: 1.3rem 1.5rem;
+          border: 1px solid var(--border);
+          border-radius: 1rem;
+          background: var(--elevated-surface);
+
+          & > div {
+            & > strong,
+            & > span {
+              display: block;
+            }
+
+            & > strong {
+              color: var(--light-primary);
+            }
+
+            & > span {
+              margin-top: .25rem;
+              color: var(--secondary);
+              font-size: .8rem;
+            }
+          }
+
+          & > a {
+            padding: .65rem 1rem;
+            border: 1px solid var(--primary);
+            border-radius: .6rem;
+            color: var(--primary);
+            font-size: .8rem;
+            text-decoration: none;
+            transition: .2s;
+
+            &:hover {
+              background: var(--primary);
+              color: var(--background);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  & > .back-top {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 50;
+
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--elevated-surface);
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: 0 10px 30px var(--outer-shadow);
+    transition: .2s;
+
+    &:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .license-page {
+    & > .license-summary {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    & > .license-layout {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+
+      & > .license-nav {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        padding: .8rem 0;
+        background: color-mix(
+          in srgb,
+          var(--background) 90%,
+          transparent
+        );
+        backdrop-filter: blur(12px);
+
+        & > .license-nav-inner {
+          flex-direction: row;
+          overflow-x: auto;
+
+          & > .nav-label,
+          & > .raw-link {
+            display: none;
+          }
+
+          & > button {
+            flex-shrink: 0;
+            border-left: 0;
+            border-bottom: 2px solid transparent;
+            white-space: nowrap;
+
+            &.active {
+              border-left: 0;
+              border-bottom-color: var(--accent);
+              background: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .license-page {
+    & > .license-hero {
+      padding-top: 6rem;
+
+      & > .license-meta {
+        flex-direction: column;
+      }
+    }
+
+    & > .license-summary {
+      grid-template-columns: 1fr;
+    }
+
+    & > .license-layout {
+      width: 90%;
+
+      & > .license-document {
+        & > .license-section {
+          & > .rights-grid {
+            grid-template-columns: 1fr;
+          }
+
+          & > .not-open-source {
+            grid-template-columns: 1fr;
+
+            & > span {
+              width: 55px;
+              height: 55px;
+            }
+          }
+
+          & > .acceptance-card {
+            align-items: flex-start;
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+}

@@ -3,6 +3,9 @@ html {
   color-scheme: dark;
   color: white;
 
+  transition: 300ms;
+  scroll-behavior: smooth;
+
   user-select: none;
   -moz-user-select: none;
 }
@@ -22,4 +25,12 @@ html, body {
 
   font-family: 'Google Sans', sans-serif;
   overflow-x: hidden;
+} #small {
+  display: none;
+}
+
+/* EXCEPTIONS */
+@media (max-width: calc(100dvh - 1px)) {
+  #root {display: none;}
+  #small {display: block;}
 }
