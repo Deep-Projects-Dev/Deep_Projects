@@ -4,6 +4,7 @@ import About from './pages/about.jsx'
 import License from './pages/license.jsx';
 
 import './App.css';
+import './footer.css';
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/license" element={<License />} />
+        <Route path="/.well-known/discord" element={<License />} />
       </Routes>
     </BrowserRouter>
   )

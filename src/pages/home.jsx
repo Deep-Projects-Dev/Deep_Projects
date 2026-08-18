@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import Socials from "../components/socials.jsx";
 
 
 const cards = [
@@ -71,27 +72,30 @@ export default function Home() {
             <p>
               Software for people who create, learn, and explore.
             </p>
+            <div id="socials">
+              <Socials />
+            </div>
           </div>
 
           <div className="footer-links">
             <div>
               <h3>Explore</h3>
+              <Link to="/about">About</Link>
               <Link to="/projects">Projects</Link>
               <a href="/philosophy">Philosophy</a>
-              <Link to="/about">About</Link>
             </div>
 
             <div>
               <h3>Development</h3>
               <a href="https://github.com/Deep-Projects-Dev/">GitHub</a>
+              <Link to="/license">DPSAL - License</Link>
               <a href="/source">Source Available</a>
-              <a href="/license">DPSAL</a>
             </div>
 
             <div>
               <h3>Connect</h3>
               <Link to="/contact">Contact</Link>
-              <a href="/discord">Discord</a>
+              <a href="/updates">Updates</a>
               <a href="/updates">Updates</a>
             </div>
           </div>
