@@ -17,3 +17,7 @@
     filter: blur(4rem);
   }
 }
+
+.circle {
+  border-radius: 50%;
+}

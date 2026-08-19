@@ -1,5 +1,6 @@
 import { Link } from "react-router";
-import Socials from "../components/socials.jsx";
+import Navbar from "../components/navbar.jsx";
+import Footer from "../components/footer.jsx";
 
 
 const cards = [
@@ -28,7 +29,9 @@ const cards = [
 export default function Home() {
   return (
     <>
-      <div id="matrix" />
+      <Navbar />
+
+      <div className="matrix" />
     
       <section id="hero">
         <h1>Deep Projects</h1>
@@ -65,47 +68,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="footer">
-        <div className="footer-main">
-          <div className="footer-brand">
-            <h2>Deep Projects</h2>
-            <p>
-              Software for people who create, learn, and explore.
-            </p>
-            <div id="socials">
-              <Socials />
-            </div>
-          </div>
-
-          <div className="footer-links">
-            <div>
-              <h3>Explore</h3>
-              <Link to="/about">About</Link>
-              <Link to="/projects">Projects</Link>
-              <a href="/philosophy">Philosophy</a>
-            </div>
-
-            <div>
-              <h3>Development</h3>
-              <a href="https://github.com/Deep-Projects-Dev/">GitHub</a>
-              <Link to="/license">DPSAL - License</Link>
-              <a href="/source">Source Available</a>
-            </div>
-
-            <div>
-              <h3>Connect</h3>
-              <Link to="/contact">Contact</Link>
-              <a href="/updates">Updates</a>
-              <a href="/updates">Updates</a>
-            </div>
-          </div>
-        </div>
-
-        <div className="footer-bottom">
-          <span>© 2024 Deep Projects</span>
-          <span>Built to create, not to manipulate.</span>
-        </div>
-      </section>
+      <Footer />
     </>
   )
 }

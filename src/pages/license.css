@@ -6,20 +6,26 @@
       color-mix(in srgb, var(--primary) 10%, transparent),
       transparent 35rem
     ),
-    var(--background);
+    transparent;
   color: var(--light-secondary);
   padding-bottom: 8rem;
+
+  position: relative;
+  z-index: 2;
 
   & > .license-hero {
     width: min(1100px, 90%);
     margin: auto;
     padding: 9rem 0 5rem;
+
+    background: transparent;
+    box-shadow: inset 0 -5rem 9rem rgba(0, 0, 0, 1);
     text-align: center;
 
     & > .license-badge {
       display: inline-block;
       padding: .5rem .9rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
       border: 1px solid var(--border);
       border-radius: 999px;
       background: var(--surface);
@@ -122,7 +128,7 @@
 
     & > .license-nav {
       position: sticky;
-      top: 2rem;
+      top: 1.5rem;
 
       & > .license-nav-inner {
         display: flex;
@@ -539,4 +545,9 @@
       }
     }
   }
+}
+
+.license-summary, .license-layout {
+  width: 100dvw;
+  background: var(--background);
 }

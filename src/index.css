@@ -12,7 +12,7 @@ html {
 
 /* ROOT */
 html, body {
-  height: 100dvh;
+  min-height: 100dvh;
   width: 100dvw;
   padding: 0;
   margin: 0;

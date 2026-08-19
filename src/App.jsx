@@ -4,6 +4,7 @@ import About from './pages/about.jsx'
 import License from './pages/license.jsx';
 
 import './App.css';
+import './class.css';
 import './footer.css';
 
 export default function App() {
